@@ -1,0 +1,40 @@
+{
+  "name": "@awesome-cli/md2html",
+  "version": "0.1.0",
+  "description": "Render Cherry Markdown reports to standalone HTML.",
+  "type": "module",
+  "bin": {
+    "md2html": "src/cli.ts"
+  },
+  "scripts": {
+    "dev": "bun src/cli.ts",
+    "assets": "bun scripts/generate-assets.ts",
+    "build": "bun build --compile --external canvas --outfile ../bin/md2html src/cli.ts",
+    "build:darwin-arm64": "bun build --compile --target=bun-darwin-arm64 --external canvas --outfile dist/md2html-darwin-arm64 src/cli.ts",
+    "build:darwin-x64": "bun build --compile --target=bun-darwin-x64 --external canvas --outfile dist/md2html-darwin-x64 src/cli.ts",
+    "build:linux-x64": "bun build --compile --target=bun-linux-x64 --external canvas --outfile dist/md2html-linux-x64 src/cli.ts",
+    "build:linux-arm64": "bun build --compile --target=bun-linux-arm64 --external canvas --outfile dist/md2html-linux-arm64 src/cli.ts",
+    "build:windows-x64": "bun build --compile --target=bun-windows-x64 --windows-hide-console --external canvas --outfile dist/md2html-windows-x64.exe src/cli.ts",
+    "test:e2e": "bun tests/e2e/render.e2e.ts"
+  },
+  "keywords": [
+    "markdown",
+    "html",
+    "cherry-markdown",
+    "cli"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cherry-markdown": "0.11.3",
+    "echarts": "6.1.0",
+    "jsdom": "27.2.0",
+    "katex": "0.17.0",
+    "mermaid": "11.16.0"
+  },
+  "devDependencies": {
+    "@types/bun": "1.3.7",
+    "@types/jsdom": "27.0.0",
+    "playwright": "1.61.1"
+  }
+}
